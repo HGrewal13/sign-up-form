@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="left">
+
+        </div>
+    
+        <div id="right">
+
+            <!-- <div class="dummyText">
+                <p>
+                    This is not a real online service! Lorem ipsum dolor 
+                    sit amet consectetur adipisicing elit. Tenetur, voluptatibus?
+                </p>
+                <p>Sign up now to get started.</p>
+                <p>You know you want to.</p>
+            </div> -->
+
+            <form action="formSubmission.html" method="GET" id="signUpForm" novalidate>
+                <div id="formContainer">
+                    <div class="inputContainer">
+                        <label for="fName">FIRST NAME</label>
+                        <input type="text" id="fName" name="fName" minlength="2" maxlength="15" required>
+                        <span id="fNameMsg"></span>
+                    </div>
+                    <div class="inputContainer">
+                        <label for="lName">LAST NAME</label>
+                        <input type="text" id="lName" name="lName" minlength="2" maxlength="15" required>
+                    </div>
+
+                    <div class="inputContainer">
+                        <label for="email">EMAIL</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="inputContainer">
+                        <label for="phone">PHONE NUMBER</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <!-- <div class="inputContainer">
+                        <label for="password">PASSWORD</label>
+                        <input type="password" id="password" name="password" minlength="4" maxlength="10" required>
+                    </div>
+                    <div class="inputContainer">
+                        <label for="confirmPassword">CONFIRM PASSWORD</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" minlength="4" maxlength="10" required>
+                    </div> -->
+                </div>
+                <div id="buttonContainer">
+                    <button type="submit">Create Account</button>
+                </div>
+            </form>
+
+            <!-- <div id="logInContainer">
+                <p>Already have an account? <a href="#">Log In</a></p>
+            </div> -->
+        </div>
+
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

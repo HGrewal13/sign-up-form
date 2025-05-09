@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission</title>
+</head>
+</head>
+<body>
+    <h2>Form Data Submitted:</h2>
+    <pre id="output"></pre>
+    <a href="/">Back</a>
+
+    <script>
+        // Get the query string from the URL
+        const params = new URLSearchParams(window.location.search);
+        const output = document.getElementById('output');
+
+        // Loop through all parameters and display them
+        params.forEach((value, key) => {
+            output.textContent += `${key}: ${value}\n`;
+        });
+    </script>
+</body>
+</html>

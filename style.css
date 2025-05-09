@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+
+:root {
+    font-size: 16px;
+    --validBorder: 1px solid greenyellow;
+    --invalidBorder: 2px solid red;
+}
+
+#container {
+    display: flex;
+}
+
+#left {
+    background-color: aquamarine;
+    width: 40vw;
+    height: 100vh;
+}
+
+#right {
+    background-color: cadetblue;
+    width: 60vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dummyText, #formContainer, #buttonContainer, #logInContainer {
+    padding: 0 5%;
+}
+
+.dummyText {
+    font-size: 1.5em;
+}
+
+
+#formContainer {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.inputContainer {
+    display: flex;
+    /* flex-direction: column; */
+    flex-flow: column wrap;
+    width: 40%;
+    margin: 10px 0;
+}
+
+/* label {
+    font-size: clamp(1em, 1em + .5vw, 1.25em)
+} */
+
+.inputContainer > input {
+    /* width: 70%; */
+    width: calc(20vw);
+    padding: 5px;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid red;
+}
+
+/* input:valid {
+    border: var(--validBorder);
+}
+
+input:invalid {
+    border: var(--invalidBorder);
+} */
+
+button {
+    padding: .75em 2em;
+}
+
