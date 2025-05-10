@@ -130,6 +130,26 @@ function checkPhoneValidity() {
     }
 }
 
+function checkCapitalLetter(password) {
+    let val = password.value;
+    let capitalLetters = /[A-Z]/;
+    let capitalFlag = false;
+    if(capitalLetters.test(val)) {
+        capitalFlag = true;
+    }
+    return capitalFlag;
+}
+
+function checkForNumber(password) {
+    let val = password.value;
+    let regexNumberCheck = /[0-9]/;
+    let numberFlag = false;
+    if(regexNumberCheck.test(val)) {
+        numberFlag = true;
+    }
+    return numberFlag;
+}
+
 function checkSymbolInclusion(password) {
     let val = password.value;
     let specialCharacters = ["@","#","!","$"];
@@ -153,8 +173,8 @@ function checkPasswordValidity() {
         password.setCustomValidity(msg);
         password.reportValidity();
         return false;
-    } else if(!checkSymbolInclusion(password)) {
-        let msg = 'Password must contain a special character ("@","#","!","$").'
+    } else if(!checkSymbolInclusion(password) || !checkCapitalLetter(password) || !checkForNumber(password)) {
+        let msg = 'Password must contain an uppercase letter, a number, and a special character ("@","#","!","$").'
         password.setCustomValidity(msg);
         password.reportValidity();
         return false;
@@ -166,6 +186,18 @@ function checkPasswordValidity() {
     }
 }
 
+function checkConfirmPasswordValidity(pass) {
+    if(confirmPassword.value !== password.value) {
+        let msg = "Passwords do not match.";
+        confirmPassword.setCustomValidity(msg);
+        confirmPassword.reportValidity();
+        return false;
+    } else {
+        confirmPassword.setCustomValidity("");
+        confirmPassword.reportValidity();
+        return true;
+    }
+}
 
 
 // EVENT LISTENERS---------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -178,6 +210,8 @@ function checkPasswordValidity() {
 phone.addEventListener("keydown", (event) => {checkPhoneEntry(event)});
 phone.addEventListener("input", phoneFormatting);
 
+confirmPassword.addEventListener("input", (event) => checkConfirmPasswordValidity(password));
+
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     
@@ -187,6 +221,7 @@ form.addEventListener("submit", (event) => {
     if(!checkEmailValidity()) return;
     if(!checkPhoneValidity()) return;
     if(!checkPasswordValidity()) return;
+    if(!checkConfirmPasswordValidity()) return;
 })
 
 
