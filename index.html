@@ -29,7 +29,6 @@
                     <div class="inputContainer">
                         <label for="fName">FIRST NAME</label>
                         <input type="text" id="fName" name="fName" minlength="2" maxlength="15" required>
-                        <span id="fNameMsg"></span>
                     </div>
                     <div class="inputContainer">
                         <label for="lName">LAST NAME</label>
@@ -42,17 +41,18 @@
                     </div>
                     <div class="inputContainer">
                         <label for="phone">PHONE NUMBER</label>
-                        <input type="tel" id="phone" name="phone" required>
+                        <!-- min and max length of 12 to account for dashes -->
+                        <input type="tel" id="phone" name="phone" minlength="12" required>
                     </div>
 
-                    <!-- <div class="inputContainer">
+                    <div class="inputContainer">
                         <label for="password">PASSWORD</label>
                         <input type="password" id="password" name="password" minlength="4" maxlength="10" required>
                     </div>
                     <div class="inputContainer">
                         <label for="confirmPassword">CONFIRM PASSWORD</label>
                         <input type="password" id="confirmPassword" name="confirmPassword" minlength="4" maxlength="10" required>
-                    </div> -->
+                    </div>
                 </div>
                 <div id="buttonContainer">
                     <button type="submit">Create Account</button>
