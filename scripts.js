@@ -1,5 +1,5 @@
 
-// Define Form and Input Variables------------------------------------------------------------------------------------------------------------------------------------------------
+// Define DOM Variables------------------------------------------------------------------------------------------------------------------------------------------------
 const form = document.querySelector("#signUpForm");
 const fName = document.querySelector("#fName");
 const lName = document.querySelector("#lName");
@@ -222,6 +222,8 @@ form.addEventListener("submit", (event) => {
     if(!checkPhoneValidity()) return;
     if(!checkPasswordValidity()) return;
     if(!checkConfirmPasswordValidity()) return;
+
+    form.submit();
 })
 
 
